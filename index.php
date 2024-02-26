@@ -12,5 +12,5 @@ $query->execute();
 $posts = $query->fetchALL(PDO::FETCH_ASSOC);
 
 echo "<pre>";
-var_dump($posts->title);
+var_dump($posts);
 echo "</pre>";
