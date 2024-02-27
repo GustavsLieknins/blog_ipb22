@@ -1,5 +1,6 @@
 <?php
 
+require "functions.php";
 
 // echo "he";
 
@@ -11,8 +12,4 @@ $query = $pdo->prepare("SELECT * FROM posts"); //sagatavo SQL izspildei
 $query->execute();
 $posts = $query->fetchALL(PDO::FETCH_ASSOC);
 
-echo "<pre>";
-echo $posts[0]["title"];
-echo "<br>";
-echo $posts[1]["title"];
-echo "</pre>";
+dd($posts);
