@@ -2,10 +2,12 @@
 
 require "functions.php";
 require "Database.php";
+$config = require "config.php";
 
-// echo "he";
+echo "Hello world";
 
-$db = new DataBase();
+
+$db = new DataBase($config);
 $posts = $db->execute("SELECT * FROM posts")->fetchALL();
 
 // $cats = $db->execute("SELECT * FROM cats")->fetchALL();
