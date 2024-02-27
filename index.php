@@ -1,15 +1,15 @@
 <?php
 
 require "functions.php";
+require "Database.php";
 
 // echo "he";
 
-$connection_string = "mysql:host=localhost;dbname=blog_lieknins;user=root;password=;charset=utf8mb4";
-$pdo = new PDO($connection_string);
+$db = new DataBase();
+$posts = $db->execute("SELECT * FROM posts")->fetchALL();
 
+// $cats = $db->execute("SELECT * FROM cats")->fetchALL();
 
-$query = $pdo->prepare("SELECT * FROM posts"); //sagatavo SQL izspildei
-$query->execute();
-$posts = $query->fetchALL(PDO::FETCH_ASSOC);
+// $days = $db->execute("SELECT * FROM days")->fetchALL();
 
 dd($posts);
