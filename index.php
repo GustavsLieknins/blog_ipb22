@@ -10,7 +10,6 @@ echo "<br>";
 echo "<button>Submit</button>";
 echo "</form>";
 echo "<form>";
-echo "<br>";
 echo "Category: ";
 echo "<select name='category'>";
 echo "<option value='sport'>Sport</option>";
@@ -30,7 +29,6 @@ echo "<h1>Posts</h1>";
 if(isset($_GET["category"]))
 {
     $categories = $_GET["category"];
-    echo $categories;
     $params = [];
     $query = "SELECT *
     FROM posts 
