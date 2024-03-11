@@ -5,17 +5,17 @@ require "Database.php";
 $config = require "config.php";
 
 echo "<form>";
-echo "<input name='id' />";
+echo "<input name='id' value='" . ($_GET["id"] ?? '') . "'/>";
 echo "<br>";
 echo "<button>Submit</button>";
 echo "</form>";
 echo "<form>";
 echo "Category: ";
-echo "<select name='category'>";
-echo "<option value='sport'>Sport</option>";
-echo  "<option value='music'>Music</option>";
-echo  "<option value='food'>Food</option>";
-echo  "</select>";
+echo "<select name='category' />";
+echo "<option value='sport'" . ($_GET["category"] == 'sport' ? "selected" : '') . "  >Sport</option>";
+echo "<option value='music'" . ($_GET["category"] == 'music' ? "selected" : '') . " >Music</option>";
+echo "<option value='food'" . ($_GET["category"] == 'food' ? "selected" : '') . "  >Food</option>";
+echo "</select>";
 echo "<br>";
 echo "<button>Submit</button>";
 echo "</form>";
@@ -24,7 +24,6 @@ echo "</form>";
 
 
 echo "<h1>Posts</h1>";
-
 
 if(isset($_GET["category"]))
 {
@@ -76,7 +75,10 @@ if(isset($_GET["id"]))
     // if($meow == 0){
     //     $query = "SELECT * FROM posts";
     // }
-}
+}//else
+// {
+//     $query = "SELECT * FROM posts"; 
+// }
 
 $db = new DataBase($config);
 $posts = $db->execute($query, $params)->fetchALL();
