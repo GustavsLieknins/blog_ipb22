@@ -1,9 +1,11 @@
+<?php require "components/head.php" ?>
+<?php require "components/navbar.php" ?>
 <form>
     <input name='id' value="<?= ($_GET["id"] ?? '') ?>" />
     <br>
     <button>Submit</button>
-    </form>
-    <form>
+</form>
+<form>
     Category: 
     <select name='category' >
     <option value='show_all' <?= (isset($_GET["category"]) && $_GET["category"] == 'show_all' ? "selected" : '') ?> >All categories</option>
@@ -13,11 +15,12 @@
     </select>
     <br>
     <button>Submit</button>
-    </form>
-    <hr>
-    <h1>Posts</h1>
-    <ul>
-    <?php foreach ($posts as $data) { ?>
-        <li> <?= $data["title"] ?> </li>
-    <?php } ?>
-    </ul>
+</form>
+<hr>
+<h1>Posts</h1>
+<ul>
+<?php foreach ($posts as $data) { ?>
+    <li> <?= $data["title"] ?> </li>
+<?php } ?>
+</ul>
+<?php require "components/footer.php" ?>

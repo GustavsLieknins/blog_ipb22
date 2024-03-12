@@ -89,6 +89,6 @@ if(isset($query) || isset($params) ){
 
 
 
-
-require "index.view.php";
+$page_title = "Main pager";
+require "views/index.view.php";
 ?>
