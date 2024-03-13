@@ -20,7 +20,6 @@
             <button class="submit-numbered-index">Submit</button>
         </form>
     </div>
-
 </div>
 <div class="output-index">
     <h1>Posts</h1>
