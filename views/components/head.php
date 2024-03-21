@@ -125,6 +125,17 @@
         font-weight: 500;
         font-style: normal;
     }
+    .delete-button
+    {
+        all: unset;
+        margin-top: 5px;
+        width: 200px;
+        background-color: red;
+        color: white;
+        border: 1px solid black;
+        cursor: pointer;
+        text-align: center;
+    }
 </style>
 </head>
 <body>
