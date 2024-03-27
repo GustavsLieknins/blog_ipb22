@@ -136,6 +136,19 @@
         cursor: pointer;
         text-align: center;
     }
+    label
+    {
+        possition: relative;
+        display: inline-block;
+    }
+    .invalid-data
+    {
+        possition: absolute;
+        top: 100%;
+        left: 0;
+        color: red;
+        font-size: 0.8em;
+    }
 </style>
 </head>
 <body>

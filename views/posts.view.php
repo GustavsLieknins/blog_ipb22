@@ -24,7 +24,7 @@
 <div class="output-index">
     <h1>Posts</h1>
     <?php foreach ($posts as $data) { ?>
-        <p> <?= $data["title"] ?> </p>
+        <p> <?= htmlspecialchars($data["title"]) ?> </p>
     <?php } ?>
 </div>
 <?php require "components/footer.php" ?>
