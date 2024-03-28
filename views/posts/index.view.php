@@ -1,5 +1,5 @@
-<?php require "components/head.php" ?>
-<?php require "components/navbar.php" ?>
+<?php require "views/components/head.php" ?>
+<?php require "views/components/navbar.php" ?>
 <div class="div-for-input-divs">
     <div class="dropdown-input-div">
         <p>Select by category:</p>
@@ -23,8 +23,15 @@
 </div>
 <div class="output-index">
     <h1>Posts</h1>
-    <?php foreach ($posts as $data) { ?>
-        <p> <?= htmlspecialchars($data["title"]) ?> </p>
-    <?php } ?>
+    <ul>
+        <?php foreach ($posts as $data) { ?>
+            <li>
+                <?= htmlspecialchars($data["title"]) ?>
+                <form class="delete_form" method="POST" action="/delete-index">
+                <button name="id" value='<?= $data["id"] ?>'>Delete</button>
+                </form>
+            </li>
+        <?php } ?>
+    </ul>
 </div>
-<?php require "components/footer.php" ?>
+<?php require "views/components/footer.php" ?>

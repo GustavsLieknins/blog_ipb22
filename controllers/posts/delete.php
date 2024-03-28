@@ -18,4 +18,4 @@ $db = new DataBase($config);
 $posts = $db->execute($query, $params)->fetchALL();
 
 $page_title = "Delete";
-require "views/posts-delete.view.php";
+require "views/posts/delete.view.php";

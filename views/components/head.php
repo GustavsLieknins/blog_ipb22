@@ -102,6 +102,7 @@
     {
         width: 60%;
         text-align: center;
+        align-items: center;
         position: absolute;
         margin-left: 20%;
         left: 0;
@@ -148,6 +149,15 @@
         left: 0;
         color: red;
         font-size: 0.8em;
+    }
+    .delete_form
+    {
+        display: inline-block;
+    }
+    li
+    {
+        
+        list-style-type: none;
     }
 </style>
 </head>
