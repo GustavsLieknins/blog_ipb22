@@ -7,7 +7,6 @@ $config = require "config.php";
 // $id = $_GET["id"];
 
 
-
 if(isset($_GET["category"]))
 {
     if($_GET["category"] == "show_all"){
@@ -31,7 +30,6 @@ if(isset($_GET["category"]))
 
 
 
-// $query = "SELECT * FROM posts";
 
 if(isset($_GET["id"]))
 {
@@ -81,6 +79,11 @@ if(isset($query) || isset($params) ){
     $posts = $db->execute($query, $params)->fetchALL();
 }
 
+
+// $query = "SELECT posts.* FROM posts";
+// $params = [];
+// $db = new DataBase($config);
+// $posts = $db->execute($query, $params)->fetchALL();
 
 // $cats = $db->execute("SELECT * FROM cats")->fetchALL();
 
