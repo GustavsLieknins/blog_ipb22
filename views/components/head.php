@@ -159,6 +159,32 @@
         
         list-style-type: none;
     }
+    textarea {
+        /* width: 100%; */
+        height: 30px;
+        /* padding: 12px 20px; */
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: none;
+
+        /* display: block;
+        margin-left: auto;
+        margin-right: auto; */
+    }
+    .form-create
+    {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: max-content;
+    }
+    a
+    {
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>

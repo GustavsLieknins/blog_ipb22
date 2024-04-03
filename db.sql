@@ -5,7 +5,8 @@ DROP TABLE categories;
 
 CREATE TABLE posts (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-	title VARCHAR(255) NOT NULL
+	title VARCHAR(255) NOT NULL,
+	content TEXT
 );
 
 INSERT INTO posts

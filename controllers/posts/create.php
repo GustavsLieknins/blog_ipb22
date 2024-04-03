@@ -25,6 +25,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $postTitle = $_POST["post-title"];
         $postCategoryId = $_POST["post-category-id"];
+        if(isset($_POST["post-content"])  && $_POST["post-content"] != "" ){
+            $postContent = $_POST["post-content"];
+            $query = "INSERT INTO 
+            posts (title, category_id, content) 
+            VALUE 
+            (:title, :category_id, :content);";
+            $params = [":title" => $postTitle, ":category_id" => $postCategoryId, ":content" => $postContent];
+            $db = new DataBase($config);
+            $posts = $db->execute($query, $params)->fetchALL();
+            header("Location: /");
+            die();   
+        }else{
+
         $query = "INSERT INTO 
         posts (title, category_id) 
         VALUE 
@@ -33,7 +46,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $db = new DataBase($config);
         $posts = $db->execute($query, $params)->fetchALL();
         header("Location: /");
-        die();        
+        die();     
+    }   
     }
 
 

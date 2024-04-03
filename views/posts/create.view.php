@@ -1,13 +1,17 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
     <h1>Create posts</h1>
-    <form method="POST">
+    <form method="POST" class="form-create">
         <label>
             Add title:
             <input type="text" name="post-title" value='<?= $_POST["post-title"] ?? "" ?>' required>
             <?php if(isset($errors["title"])){ ?>
             <p class="invalid-data"><?= $errors["title"] ?></p>
             <?php } ?>
+        </label>
+        <label>
+            Content:
+            <textarea name="post-content" value='<?= $_POST["post-content"] ?? "" ?>' ></textarea>
         </label>
 
             <!-- <input type="text" name="post-category-id"> -->
