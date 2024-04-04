@@ -4,7 +4,7 @@
     <form method="POST" class="form-create">
         <label>
             Add title:
-            <input type="text" name="post-title" value='<?= $_POST["post-title"] ?? "" ?>' required>
+            <input type="text" name="post-title" value='<?= $_POST["post-title"] ?? "" ?>'>
             <?php if(isset($errors["title"])){ ?>
             <p class="invalid-data"><?= $errors["title"] ?></p>
             <?php } ?>
@@ -12,6 +12,9 @@
         <label>
             Content:
             <textarea name="post-content" value='<?= $_POST["post-content"] ?? "" ?>' ></textarea>
+            <?php if(isset($errors["content"])){ ?>
+            <p class="invalid-data"><?= $errors["content"] ?></p>
+            <?php } ?>
         </label>
 
             <!-- <input type="text" name="post-category-id"> -->

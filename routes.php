@@ -8,5 +8,6 @@ $routes = [
     "/create" => "controllers/posts/create.php",
     "/delete" => "controllers/posts/delete.php",
     "/delete-index" => "controllers/posts/delete-index.php",
-    "/show" => "controllers/posts/show.php"
+    "/show" => "controllers/posts/show.php",
+    "/edit" => "controllers/posts/edit.php"
 ];

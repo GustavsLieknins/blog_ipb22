@@ -1,6 +1,8 @@
 <?php
+
 require "functions.php";
 require "Database.php";
+require "Validator.php";
 $config = require "config.php";
 
 // if($_SERVER["REQUEST_METHOD"] == "POST" && trim($_POST["post-title"]) != "" && $_POST["post-category-id"] <= 3 && strlen($_POST["post-title"]) <= 255)
@@ -8,18 +10,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
 
     $errors = [];
-    if(trim($_POST["post-title"]) == "" )
+    if(!Validator::string($_POST["post-title"], min_len: 1, max_len: 255))
     {
-        $errors["title"] = "Title cannot be empty";
+        $errors["title"] = "Title cannot be empty or too long";
     }
-    if($_POST["post-category-id"] < 1 || $_POST["post-category-id"] > 3)
+    if(!Validator::string($_POST["post-content"], min_len: 1, max_len: 255))
     {
-        $errors["category-id"] = "There is no sucha id";  
+        $errors["content"] = "Content cannot be empty or too long";
     }
-    if(strlen($_POST["post-title"]) > 255)
+    if(!Validator::number($_POST["post-category-id"], min: 1, max: 3))
     {
-        $errors["title"] = "This is tooooo long";  
+        $errors["category-id"] = "There is no sucha id or not number at all";  
     }
+    // if(strlen($_POST["post-title"]) > 255)
+    // {
+    //     $errors["title"] = "This is tooooo long";  
+    // }
 
     if(empty($errors))
     {
