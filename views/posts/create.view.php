@@ -11,7 +11,7 @@
         </label>
         <label>
             Content:
-            <textarea name="post-content" value='<?= $_POST["post-content"] ?? "" ?>' ></textarea>
+            <textarea name="post-content"  ><?= $_POST["post-content"] ?? "" ?></textarea>
             <?php if(isset($errors["content"])){ ?>
             <p class="invalid-data"><?= $errors["content"] ?></p>
             <?php } ?>
