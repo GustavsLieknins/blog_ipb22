@@ -4,7 +4,7 @@
     <form method="POST" class="form-create">
         <label>
             Edit title:
-            <input type="text" name="post-title" value='<?= htmlspecialchars($post["title"]) ?? "" ?>'>
+            <input type="text" name="post-title" value='<?= $_POST["post-title"] ?? $post["title"] ?>'>
             <?php if(isset($errors["title"])){ ?>
             <p class="invalid-data"><?= $errors["title"] ?></p>
             <?php } ?>
@@ -21,9 +21,9 @@
         <label>
         Edit category ID:
             <select name='post-category-id' class="dropdown-input" required>
-                <option value='1' <?= $post["category_id"] == 1 ? "selected" : "" ?>>Sport</option>
-                <option value='2' <?= $post["category_id"] == 2 ? "selected" : "" ?>>Music</option>
-                <option value='3' <?= $post["category_id"] == 3 ? "selected" : "" ?>>Food</option>
+                <option value='1' <?= ($_POST["post-category-id"] ?? $post["category_id"]) == 1 ? "selected" : "" ?>>Sport</option>
+                <option value='2' <?= ($_POST["post-category-id"] ?? $post["category_id"]) == 2 ? "selected" : "" ?>>Music</option>
+                <option value='3' <?= ($_POST["post-category-id"] ?? $post["category_id"]) == 3 ? "selected" : "" ?>>Food</option>
             </select>
             <?php if(isset($errors["category-id"])){ ?>
             <p class="invalid-data"><?= $errors["category-id"] ?></p>

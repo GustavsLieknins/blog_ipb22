@@ -21,9 +21,9 @@
         <label>
         Category ID:
             <select name='post-category-id' class="dropdown-input" required>
-                <option value='1'>Sport</option>
-                <option value='2'>Music</option>
-                <option value='3'>Food</option>
+                <option value='1' <?= (isset($_POST["post-category-id"]) && $_POST["post-category-id"] == 1) ? "selected" : "" ?>>Sport</option>
+                <option value='2' <?= (isset($_POST["post-category-id"]) && $_POST["post-category-id"] == 2) ? "selected" : "" ?>>Music</option>
+                <option value='3' <?= (isset($_POST["post-category-id"]) && $_POST["post-category-id"] == 3) ? "selected" : "" ?>>Food</option>
             </select>
             <?php if(isset($errors["category-id"])){ ?>
             <p class="invalid-data"><?= $errors["category-id"] ?></p>
