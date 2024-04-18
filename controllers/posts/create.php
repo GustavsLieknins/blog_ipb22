@@ -1,6 +1,7 @@
 <?php
 
-require "functions.php";
+auth();
+
 require "Database.php";
 require "Validator.php";
 $config = require "config.php";

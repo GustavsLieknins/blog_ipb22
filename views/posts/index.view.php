@@ -1,5 +1,8 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
+<form action="/logout" method="POST">
+        <button>Logout</button>
+</form>
 <div class="div-for-input-divs">
     <div class="dropdown-input-div">
         <p>Select by category:</p>
@@ -34,4 +37,5 @@
         <?php } ?>
     </ul>
 </div>
+
 <?php require "views/components/footer.php" ?>

@@ -1,3 +1,4 @@
+CREATE DATABASE blog_ipb22;
 USE blog_IPb22;
 
 DROP TABLE posts;
@@ -8,6 +9,13 @@ CREATE TABLE posts (
 	title VARCHAR(255) NOT NULL,
 	content TEXT
 );
+
+CREATE TABLE users (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	email VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL
+);
+
 
 INSERT INTO posts
 (title)
@@ -22,7 +30,7 @@ VALUES
 CREATE TABLE categories (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(255) NOT NULL,
-	description TEXT,
+	description TEXT
 );
 
 -- 2. Ievieto datus tabulā, lai vēlāk nav fail
